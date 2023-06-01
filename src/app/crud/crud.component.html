@@ -1,0 +1,29 @@
+<p>crud works!</p>
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let item of data">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>
+            <button (click)="editItem(item)">Edit</button>
+            <button (click)="deleteItem(item)">Delete</button>
+        </td>
+        <td *ngIf="item.editable">
+            <input type="text" [(ngModel)]="item.tmpNewName">
+            <button (click)="updateItem(item, item.tmpNewName)">Update item</button>
+            <button (click)="cancelEdit(item)">Cancel</button>
+        </td>
+    </tr>
+</table>
+
+<div>
+    <input type="text" [(ngModel)]="newItem.name">
+    <button (click)="addItem()">Add</button>
+</div>

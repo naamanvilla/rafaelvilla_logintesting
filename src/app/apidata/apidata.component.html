@@ -1,0 +1,17 @@
+<p>apidata works!</p>
+
+
+<div *ngIf="data">
+    <ul>
+        <li>{{ data | json }}</li>
+    </ul>
+</div>
+
+<div *ngIf="dataobs$">
+    <ul>
+        <li> {{ dataobs$ | json }}</li>
+    </ul>
+</div>
+
+
+<div *ngIf="!data"> Loading data...</div>
